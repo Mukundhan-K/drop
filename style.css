@@ -1,0 +1,147 @@
+*{
+    padding: 0;
+    margin: 0;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+    text-transform: capitalize;
+}
+body{
+         background-color: rgb(255, 255, 255);
+}
+header
+{
+    width: 100%;
+    /* background-color: skyblue; */
+    height: 60px;
+}
+.container{
+    width: 100%;
+    background-color: skyblue;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-weight: bold;
+    margin: 10px;
+}
+.out{
+    display: flex;
+}
+
+ul li{
+    padding: 5px 10px;
+    outline: rgba(0, 0, 0, 0.1) solid 1px;
+    /* margin: 5px; */
+    width: 70px;
+    background-color: skyblue;
+    border: 5px solid skyblue;
+}
+.menu{
+    border: 1px solid white;
+    padding: 5px;
+    display: none;
+}
+ul li:hover , ul li:hover a{
+    color: skyblue;
+    background-color: #fff;
+}
+
+/* 
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+/* 
+/*  drop down */
+
+.out li{
+    position: relative;
+}
+.container ul li ul{
+    position: absolute;
+    width: 70px; 
+    /* top: 98%; */
+    right: 19px;
+}
+.drop1{
+    top: 100%;
+    display: none;
+}
+.drop2{
+    left: 95px;
+    top: 0px;
+    display: none;
+}
+
+/*  drop hover */
+
+.drop1 li:hover .drop2 , .out li:hover .drop1{
+    display: block;
+}
+/* 
+
+/* 
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+----------------------------
+/* 
+*/ 
+
+/* media  */
+
+@media (max-width:600px){
+    .container{
+        flex-direction: column;
+        height: 40px;
+        position: fixed;
+    }
+    .logo{
+        align-self: flex-start;
+        margin: 10px 0px 0px 20pt;
+    }
+    .menu{
+        display: inline;
+        position: relative;
+        bottom: 25px;
+        left: 210px;
+    }
+    .out{
+        flex-direction: column;
+        position: absolute;
+        top: 85%;
+        right: 2px;
+        display: none;
+    }
+    
+    .out li:hover .drop1 {
+        position: relative;
+        top: 5px;
+        right: 15px;
+        background-color: #fff;
+        border: 1px solid white;
+
+        /* left: 0px; */
+    }
+    .drop1 li:hover .drop2{
+        position: relative;
+        top: 5px;
+        left: -15px;
+        border: 1px solid white;
+
+    }
+    .out .drop2 li:hover a{
+        color: skyblue;
+        background-color: #fff;
+    }
+    .menu:active ~ .out , .menu:focus ~ .out {
+        display: block;
+        z-index: 2;
+    }
+}
